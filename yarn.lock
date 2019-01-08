@@ -11548,6 +11548,15 @@ table@^4.0.3:
     slice-ansi "1.0.0"
     string-width "^2.1.1"
 
+tabler-react@^1.27.0:
+  version "1.27.0"
+  resolved "https://registry.yarnpkg.com/tabler-react/-/tabler-react-1.27.0.tgz#bb504d49aabe04b15398b3f9b98ddc8454a13691"
+  integrity sha512-XKLmlu0m1dvVd0gSoxHiMZQM6kiUhoFiSJyY1GXPpZL9j8Vol4FDPazwp5ZWmOBNxPemDIHyKIGdOVJ1BFHHuA==
+  dependencies:
+    classnames "^2.2.5"
+    react-popper "^1.0.0-beta.6"
+    react-text-mask "^5.4.1"
+
 tapable@^1.0.0, tapable@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/tapable/-/tapable-1.1.0.tgz#0d076a172e3d9ba088fd2272b2668fb8d194b78c"
