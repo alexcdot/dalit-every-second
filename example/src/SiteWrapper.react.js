@@ -191,43 +191,6 @@ class SiteWrapper extends React.Component<Props, State> {
           href: "/",
           alt: "Tabler React",
           imageURL: "./demo/brand/tabler.svg",
-          navItems: (
-            <Nav.Item type="div" className="d-none d-md-flex">
-              <Button
-                href="https://github.com/tabler/tabler-react"
-                target="_blank"
-                outline
-                size="sm"
-                RootComponent="a"
-                color="primary"
-              >
-                Source code
-              </Button>
-            </Nav.Item>
-          ),
-          notificationsTray: {
-            notificationsObjects,
-            markAllAsRead: () =>
-              this.setState(
-                () => ({
-                  notificationsObjects: this.state.notificationsObjects.map(
-                    v => ({ ...v, unread: false })
-                  ),
-                }),
-                () =>
-                  setTimeout(
-                    () =>
-                      this.setState({
-                        notificationsObjects: this.state.notificationsObjects.map(
-                          v => ({ ...v, unread: true })
-                        ),
-                      }),
-                    5000
-                  )
-              ),
-            unread: unreadCount,
-          },
-          accountDropdown: accountDropdownProps,
         }}
         navProps={{ itemsObjects: navBarItems }}
         routerContextComponentType={withRouter(RouterContextProvider)}
