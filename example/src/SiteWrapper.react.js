@@ -3,14 +3,7 @@
 import * as React from "react";
 import { NavLink, withRouter } from "react-router-dom";
 
-import {
-  Site,
-  Nav,
-  Grid,
-  List,
-  Button,
-  RouterContextProvider,
-} from "tabler-react";
+import { Site, RouterContextProvider } from "tabler-react";
 
 import type { NotificationProps } from "tabler-react";
 
@@ -127,21 +120,6 @@ const navBarItems: Array<navItem> = [
   },
 ];
 
-const accountDropdownProps = {
-  avatarURL: "./demo/faces/female/25.jpg",
-  name: "Jane Pearson",
-  description: "Administrator",
-  options: [
-    { icon: "user", value: "Profile" },
-    { icon: "settings", value: "Settings" },
-    { icon: "mail", value: "Inbox", badge: "6" },
-    { icon: "send", value: "Message" },
-    { isDivider: true },
-    { icon: "help-circle", value: "Need help?" },
-    { icon: "log-out", value: "Sign out" },
-  ],
-};
-
 class SiteWrapper extends React.Component<Props, State> {
   state = {
     notificationsObjects: [
@@ -180,11 +158,6 @@ class SiteWrapper extends React.Component<Props, State> {
   };
 
   render(): React.Node {
-    const notificationsObjects = this.state.notificationsObjects || [];
-    const unreadCount = this.state.notificationsObjects.reduce(
-      (a, v) => a || v.unread,
-      false
-    );
     return (
       <Site.Wrapper
         headerProps={{
