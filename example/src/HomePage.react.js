@@ -2,26 +2,7 @@
 
 import * as React from "react";
 
-import {
-  Page,
-  Avatar,
-  Icon,
-  Grid,
-  Card,
-  Text,
-  Table,
-  Alert,
-  Progress,
-  colors,
-  Dropdown,
-  Button,
-  StampCard,
-  StatsCard,
-  ProgressCard,
-  Badge,
-} from "tabler-react";
-
-import C3Chart from "react-c3js";
+import { Page, Grid, Alert, StatsCard } from "tabler-react";
 
 import SiteWrapper from "./SiteWrapper.react";
 

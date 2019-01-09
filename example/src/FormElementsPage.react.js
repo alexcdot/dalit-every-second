@@ -216,9 +216,6 @@ function FormElements() {
                             extended ZIP+4 code to determine address more
                             accurately.
                           </p>
-                          <p class="mb-0">
-                            <a href="#">USP ZIP codes lookup tools</a>
-                          </p>
                         </React.Fragment>
                       }
                     />
