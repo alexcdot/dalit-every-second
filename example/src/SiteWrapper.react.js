@@ -46,12 +46,6 @@ const navBarItems: Array<navItem> = [
     icon: "check-square",
     LinkComponent: withRouter(NavLink),
   },
-  {
-    value: "Gallery",
-    to: "/gallery",
-    icon: "image",
-    LinkComponent: withRouter(NavLink),
-  },
 ];
 
 class SiteWrapper extends React.Component<Props, State> {

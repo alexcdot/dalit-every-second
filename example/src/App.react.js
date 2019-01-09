@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import HomePage from "./HomePage.react";
 import FormElementsPage from "./FormElementsPage.react";
-import GalleryPage from "./GalleryPage.react";
 
 import "tabler-react/dist/Tabler.css";
 
@@ -16,7 +15,6 @@ function App(props: Props): React.Node {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/form-elements" component={FormElementsPage} />
-          <Route exact path="/gallery" component={GalleryPage} />
         </Switch>
       </Router>
     </React.StrictMode>
