@@ -2,7 +2,7 @@ import * as React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import HomePage from "./HomePage.react";
-import FormElementsPage from "./FormElementsPage.react";
+import TwitterFeedPage from "./TwitterFeedPage.react";
 
 import "tabler-react/dist/Tabler.css";
 
@@ -17,7 +17,7 @@ class App extends React.PureComponent<Props, State> {
     super(props);
     this.state = {
       time: 0,
-    }
+    };
     this.tick = this.tick.bind(this);
     this.timerHandler = setInterval(this.tick, 1000);
   }
@@ -32,15 +32,14 @@ class App extends React.PureComponent<Props, State> {
       <React.StrictMode>
         <Router>
           <Switch>
-            <Route exact path="/"
-              render={(props) =>
-                <HomePage {...props}
-                  tick={this.tick}
-                  time={this.state.time} />
-              }
+            <Route
+              exact
+              path="/"
+              render={props => (
+                <HomePage {...props} tick={this.tick} time={this.state.time} />
+              )}
             />
-            <Route exact path="/form-elements"
-              component={FormElementsPage} />
+            <Route exact path="/twitter-feed" component={TwitterFeedPage} />
           </Switch>
         </Router>
       </React.StrictMode>

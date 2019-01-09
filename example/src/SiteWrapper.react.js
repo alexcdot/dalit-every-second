@@ -41,8 +41,8 @@ const navBarItems: Array<navItem> = [
     useExact: true,
   },
   {
-    value: "Forms",
-    to: "/form-elements",
+    value: "Twitter Feed",
+    to: "/twitter-feed",
     icon: "check-square",
     LinkComponent: withRouter(NavLink),
   },
