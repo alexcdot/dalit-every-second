@@ -42,7 +42,7 @@ function StatsCard({
 }: Props): React.Node {
   const classes = cn(className);
   const movementString = `${movement > 0 ? "+" : ""}${movement}%`;
-  const movementColor = !movement ? "yellow" : movement > 0 ? "green" : "red";
+  const movementColor = !movement ? "yellow" : movement > 0 ? "red" : "red";
   if (layout === 2) {
     return (
       <Card className={classes}>
