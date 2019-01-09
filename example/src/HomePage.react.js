@@ -30,9 +30,21 @@ type State = {
 };
 
 class Home extends React.PureComponent<void, State> {
-  state = {
-    time: 0,
-  };
+  constructor() {
+    super();
+    this.state = {
+      time: 0,
+    };
+
+    this.tick = this.tick.bind(this);
+    // Start running the tick function every 1000 ms
+    this.timerHandle = setInterval(this.tick, 1000);
+  }
+
+  tick() {
+    // Increase time by 1
+    this.setState({ time: this.state.time + 1 });
+  }
 
   render() {
     return (
@@ -40,54 +52,56 @@ class Home extends React.PureComponent<void, State> {
         <Page.Content>
           <Grid.Row cards={true}>
             <Grid.Col md={12}>
-              <Alert type="primary">It has been XX seconds.</Alert>
+              <Alert type="primary">
+                It has been {this.state.time} seconds.
+              </Alert>
             </Grid.Col>
             <Grid.Col width={6} sm={4} lg={2}>
               <StatsCard
                 layout={1}
                 movement={6}
-                total="43"
-                label="New Tickets"
+                total={Math.round(this.state.time / 10)}
+                label="Dalits were murdered"
               />
             </Grid.Col>
             <Grid.Col width={6} sm={4} lg={2}>
               <StatsCard
                 layout={1}
                 movement={-3}
-                total="17"
-                label="Closed Today"
+                total={Math.round(this.state.time / 2)}
+                label="Dalits were assaulted"
               />
             </Grid.Col>
             <Grid.Col width={6} sm={4} lg={2}>
               <StatsCard
                 layout={1}
                 movement={9}
-                total="7"
-                label="New Replies"
+                total={Math.round(this.state.time / 3)}
+                label="Dalits were raped"
               />
             </Grid.Col>
             <Grid.Col width={6} sm={4} lg={2}>
               <StatsCard
                 layout={1}
                 movement={3}
-                total="27.3k"
-                label="Followers"
+                total={Math.round(this.state.time / 9)}
+                label="Dalits were kidnapped"
               />
             </Grid.Col>
             <Grid.Col width={6} sm={4} lg={2}>
               <StatsCard
                 layout={1}
                 movement={-2}
-                total="$95"
-                label="Daily earnings"
+                total={Math.round(this.state.time / 4)}
+                label="Dalit homes were burnt"
               />
             </Grid.Col>
             <Grid.Col width={6} sm={4} lg={2}>
               <StatsCard
                 layout={1}
                 movement={-1}
-                total="621"
-                label="Products"
+                total={Math.round(this.state.time / 20)}
+                label="Dalits were denied healthcare"
               />
             </Grid.Col>
           </Grid.Row>
