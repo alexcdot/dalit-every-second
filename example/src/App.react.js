@@ -19,7 +19,7 @@ class App extends React.PureComponent<Props, State> {
       time: 0,
     };
     this.tick = this.tick.bind(this);
-    this.timerHandler = setInterval(this.tick, 1000);
+    this.timerHandler = setInterval(this.tick, 100);
   }
 
   tick() {
