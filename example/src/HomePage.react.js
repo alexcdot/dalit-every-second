@@ -2,29 +2,17 @@
 
 import * as React from "react";
 
-import { Page, Grid, Alert, StatsCard } from "tabler-react";
+import { Page, Grid, Alert, StatsCard, Progress } from "tabler-react";
 
 import SiteWrapper from "./SiteWrapper.react";
 
-type State = {
+type Props = {
   time: number,
 };
 
-class Home extends React.PureComponent<void, State> {
-  constructor() {
-    super();
-    this.state = {
-      time: 0,
-    };
-
-    this.tick = this.tick.bind(this);
-    // Start running the tick function every 1000 ms
-    this.timerHandle = setInterval(this.tick, 1000);
-  }
-
-  tick() {
-    // Increase time by 1
-    this.setState({ time: this.state.time + 1 });
+class Home extends React.PureComponent<Props, void> {
+  constructor(props) {
+    super(props);
   }
 
   render() {
@@ -34,54 +22,76 @@ class Home extends React.PureComponent<void, State> {
           <Grid.Row cards={true}>
             <Grid.Col md={12}>
               <Alert type="primary">
-                It has been {this.state.time} seconds.
+                It has been {Math.round(this.props.time/10)} seconds.
               </Alert>
             </Grid.Col>
             <Grid.Col width={6} sm={4} lg={2}>
+              <Progress size="xs">
+                <Progress.Bar color="red" width={Math.round(this.props.time) % 100} />
+              </Progress>
               <StatsCard
                 layout={1}
-                movement={6}
-                total={Math.round(this.state.time / 10)}
+                movement={300}
+                total={Math.floor(this.props.time / 100)}
                 label="Dalits were murdered"
               />
             </Grid.Col>
             <Grid.Col width={6} sm={4} lg={2}>
+              <Progress size="xs">
+                <Progress.Bar color="red" width={Math.round(this.props.time * 2) % 100} />
+              </Progress>
               <StatsCard
                 layout={1}
-                movement={-3}
-                total={Math.round(this.state.time / 2)}
+                movement={350}
+                total={Math.floor(this.props.time / 50)}
                 label="Dalits were assaulted"
               />
             </Grid.Col>
             <Grid.Col width={6} sm={4} lg={2}>
+              <Progress size="xs">
+                <Progress.Bar color="red" width={Math.round(this.props.time /3) % 100} />
+              </Progress>
+
               <StatsCard
                 layout={1}
-                movement={9}
-                total={Math.round(this.state.time / 3)}
+                movement={250}
+                total={Math.floor(this.props.time / 300)}
                 label="Dalits were raped"
               />
             </Grid.Col>
             <Grid.Col width={6} sm={4} lg={2}>
+              <Progress size="xs">
+                <Progress.Bar color="red" width={Math.round(this.props.time * 10/9) % 100} />
+              </Progress>
+
               <StatsCard
                 layout={1}
-                movement={3}
-                total={Math.round(this.state.time / 9)}
+                movement={300}
+                total={Math.floor(this.props.time / 90)}
                 label="Dalits were kidnapped"
               />
             </Grid.Col>
             <Grid.Col width={6} sm={4} lg={2}>
+              <Progress size="xs">
+                <Progress.Bar color="red" width={Math.round(this.props.time /4) % 100} />
+              </Progress>
+
               <StatsCard
                 layout={1}
-                movement={-2}
-                total={Math.round(this.state.time / 4)}
+                movement={200}
+                total={Math.floor(this.props.time / 400)}
                 label="Dalit homes were burnt"
               />
             </Grid.Col>
             <Grid.Col width={6} sm={4} lg={2}>
+              <Progress size="xs">
+                <Progress.Bar color="red" width={Math.round(this.props.time /2) % 100} />
+              </Progress>
+
               <StatsCard
                 layout={1}
-                movement={-1}
-                total={Math.round(this.state.time / 20)}
+                movement={100}
+                total={Math.floor(this.props.time / 200)}
                 label="Dalits were denied healthcare"
               />
             </Grid.Col>
