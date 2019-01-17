@@ -17,12 +17,12 @@ class Home extends React.PureComponent<Props, void> {
     super(props);
 
     this.crimeRatio = {
-      murder: 0.1,
-      rape: 0.2,
-      sexualAssault: 0.2,
-      assault: 0.2,
-      kidnap: 0.2,
-      homeBurnt: 0.1,
+      murder: 0.07,
+      rape: 0.2268,
+      sexualAssault: 0.283,
+      assault: 0.328,
+      kidnap: 0.076,
+      homeBurnt: 0.015,
     };
 
     this.totalCrimeTime = 18 * 60;
