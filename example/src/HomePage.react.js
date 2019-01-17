@@ -4,7 +4,7 @@ import * as React from "react";
 
 import { Page, Grid, Alert, StatsCard, Progress } from "tabler-react";
 
-import {Card, CardTitle} from "reactstrap";
+import {Card, CardTitle, CardHeader, CardBody} from "reactstrap";
 
 import SiteWrapper from "./SiteWrapper.react";
 
@@ -39,41 +39,54 @@ class Home extends React.PureComponent<Props, void> {
       homeBurnt: secondsPassed/(this.totalCrimeTime / this.crimeRatio.homeBurnt),
     };
 
+    var statStyle = {
+      "font-size": "28px",
+      "min-height": "350px",
+      "padding": "25px",
+      "background-color": "darkred"
+    };
+
     return (
       <SiteWrapper>
         <Page.Content>
           <Grid.Row cards={true}>
-            <Grid.Col md={12}>
-              <Card body inverse color="danger">
+
+            <Grid.Col width={12}>
+              <Card body inverse color="danger" style={
+                {flex:1,justifyContent: "center",alignItems: "center",
+                 "margin-bottom": "10px"}
+              }>
                 <CardTitle>It has been {Math.round(secondsPassed)} seconds.</CardTitle>
               </Card>
             </Grid.Col>
-            <Grid.Col width={6} sm={4} lg={2}>
+            <Grid.Col width={6} sm={4} lg={4}>
               <Progress size="xs">
-                <Progress.Bar color="red" width={Math.round(statsList.murder % 1 * 100)} />
+                <Progress.Bar color="red" width={statsList.murder % 1 * 100} />
               </Progress>
+
               <StatsCard
                 layout={1}
-                movement={300}
+                movement={250}
                 total={Math.floor(statsList.murder)}
                 label="Dalits were murdered"
               />
             </Grid.Col>
-            <Grid.Col width={6} sm={4} lg={2}>
+
+            <Grid.Col width={6} sm={4} lg={4}>
               <Progress size="xs">
-                <Progress.Bar color="red" width={Math.round(statsList.assault % 1 * 100)} />
+                <Progress.Bar color="red" width={statsList.assault % 1 * 100} />
               </Progress>
+
               <StatsCard
-                body inverse color="danger"
                 layout={1}
-                movement={350}
+                movement={250}
                 total={Math.floor(statsList.assault)}
                 label="Dalits were assaulted"
               />
             </Grid.Col>
-            <Grid.Col width={6} sm={4} lg={2}>
+            <Grid.Col width={6} sm={4} lg={4}>
               <Progress size="xs">
-                <Progress.Bar color="red" width={Math.round(statsList.rape % 1 * 100)} />
+                <Progress.Bar color="red" width={statsList.rape % 1 * 100} />
               </Progress>
 
               <StatsCard
@@ -83,9 +96,9 @@ class Home extends React.PureComponent<Props, void> {
                 label="Dalits were raped"
               />
             </Grid.Col>
-            <Grid.Col width={6} sm={4} lg={2}>
+            <Grid.Col width={6} sm={4} lg={4}>
               <Progress size="xs">
-                <Progress.Bar color="red" width={Math.round(statsList.kidnap % 1 * 100)} />
+                <Progress.Bar color="red" width={statsList.kidnap % 1 * 100} />
               </Progress>
 
               <StatsCard
@@ -95,9 +108,9 @@ class Home extends React.PureComponent<Props, void> {
                 label="Dalits were kidnapped"
               />
             </Grid.Col>
-            <Grid.Col width={6} sm={4} lg={2}>
+            <Grid.Col width={6} sm={4} lg={4}>
               <Progress size="xs">
-                <Progress.Bar color="red" width={Math.round(statsList.homeBurnt % 1 * 100)} />
+                <Progress.Bar color="red" width={statsList.homeBurnt % 1 * 100} />
               </Progress>
 
               <StatsCard
@@ -107,9 +120,9 @@ class Home extends React.PureComponent<Props, void> {
                 label="Dalit homes were burnt"
               />
             </Grid.Col>
-            <Grid.Col width={6} sm={4} lg={2}>
+            <Grid.Col width={6} sm={4} lg={4}>
               <Progress size="xs">
-                <Progress.Bar color="red" width={Math.round(statsList.sexualAssault % 1 * 100)} />
+                <Progress.Bar color="red" width={statsList.sexualAssault % 1 * 100} />
               </Progress>
 
               <StatsCard
