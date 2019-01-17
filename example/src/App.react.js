@@ -1,6 +1,7 @@
 import * as React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+import AboutPage from "./AboutPage.react";
 import HomePage from "./HomePage.react";
 import TwitterFeedPage from "./TwitterFeedPage.react";
 
@@ -40,6 +41,7 @@ class App extends React.PureComponent<Props, State> {
               )}
             />
             <Route exact path="/twitter-feed" component={TwitterFeedPage} />
+            <Route exact path="/about" component={AboutPage} />
           </Switch>
         </Router>
       </React.StrictMode>

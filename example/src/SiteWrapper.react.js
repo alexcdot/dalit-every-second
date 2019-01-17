@@ -46,6 +46,11 @@ const navBarItems: Array<navItem> = [
     icon: "check-square",
     LinkComponent: withRouter(NavLink),
   },
+  {
+    value: "About",
+    to: "/about",
+    LinkComponent: withRouter(NavLink),
+  },
 ];
 
 class SiteWrapper extends React.Component<Props, State> {
