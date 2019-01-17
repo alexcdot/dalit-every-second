@@ -12,13 +12,13 @@ function TwitterFeed() {
   return (
     <SiteWrapper>
       <Page.Card title="Dalit Advocacy Twitter Feed" RootComponent={Form}>
-        <div className="centerContent">
-          <div className="selfCenter standardWidth">
+        <div className="centerContent" style={{display: 'flex', justifyContent:'center'}}>
+          <div className="selfCenter" style={{width: 400}}>
             <TwitterTimelineEmbed
               sourceType="list"
               ownerScreenName="majesticfish1"
               slug="dalit-advocacy"
-              options={{ height: 800 }}
+              options={{ width: 400, center: true }}
             />
           </div>
         </div>
